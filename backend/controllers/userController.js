@@ -92,3 +92,11 @@ export const logout = async (req, res) => {
     console.log(error);
   }
 };
+
+export const getOtherUsers = async (req, res) => {
+  try {
+    const loggedInUserId = req.id;
+  } catch (error) {
+    console.log(error);
+  }
+};
