@@ -1,10 +1,28 @@
+import Signup from "./components/Signup";
+import "./App.css";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import HomePage from "./components/HomePage";
+import Login from "./components/Login";
 
-import './App.css';
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <HomePage />,
+  },
+  {
+    path: "/register",
+    element: <Signup />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+]);
 
 function App() {
   return (
-    <div className="App">
-      Lets build
+    <div className="p-4 h-screen flex items-center justify-center">
+      <RouterProvider router={router} />
     </div>
   );
 }
