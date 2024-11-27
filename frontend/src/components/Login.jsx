@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import toast from "react-hot-toast";
+import { useDispatch } from "react-redux";
+import { setAuthUser } from "../redux/userSlice";
 
 const Login = () => {
 
@@ -9,6 +11,7 @@ const Login = () => {
     username: "",
     password: "",
   })
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const onSubmitHandler = async (e) => {
@@ -22,8 +25,8 @@ const Login = () => {
       })
       {
         navigate("/")
-        console.log(res);
-        
+        dispatch(setAuthUser(res.data))
+
 
       }
     } catch (error) {
