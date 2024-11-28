@@ -25,6 +25,7 @@ const Login = () => {
       })
       {
         navigate("/")
+        console.log(res);
         dispatch(setAuthUser(res.data))
 
 

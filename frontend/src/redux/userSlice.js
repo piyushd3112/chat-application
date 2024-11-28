@@ -1,11 +1,11 @@
 import {createSlice} from "@reduxjs/toolkit";
-import OtherUsers from "../components/OtherUsers";
 
 const userSlice = createSlice({
   name: "user",
   initialState: {
     authUser: null,
     OtherUsers: null,
+    selectedUser: null,
   },
   reducers: {
     setAuthUser: (state, action) => {
@@ -14,8 +14,11 @@ const userSlice = createSlice({
     setOtherUsers: (state, action) => {
       state.OtherUsers = action.payload;
     },
+    setSelectedUser: (state, action) => {
+      state.selectedUser = action.payload;
+    },
   },
 });
 
-export const {setAuthUser, setOtherUsers} = userSlice.actions;
+export const {setAuthUser, setOtherUsers, setSelectedUser} = userSlice.actions;
 export default userSlice.reducer;
